@@ -1,0 +1,344 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tajawal', sans-serif;
+}
+
+body {
+    background: #1a1a1a;
+    min-height: 100vh;
+    padding: 20px;
+    direction: rtl;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container Styles */
+.container {
+    max-width: 800px;
+    width: 100%;
+    background: #2d2d2d;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+/* Header Styles */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #3d3d3d;
+}
+
+.header h1 {
+    color: #60a5fa;
+    margin-bottom: 15px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    padding: 15px;
+    background: #363636;
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 1.2em;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Unit Selection Styles */
+.unit-selection {
+    margin-bottom: 30px;
+}
+
+/* [Previous CSS styles remain the same until .unit-selection] */
+
+/* Units Grid Styles */
+.units-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.unit-card {
+    background: #363636;
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.unit-card:hover {
+    transform: translateY(-5px);
+    background: #404040;
+}
+
+.unit-card.selected {
+    border-color: #60a5fa;
+    background: #404040;
+}
+
+.unit-card .unit-title {
+    font-size: 1.2em;
+    color: #60a5fa;
+    margin-bottom: 10px;
+}
+
+.unit-card .unit-info {
+    font-size: 0.9em;
+    color: #a0aec0;
+}
+
+.unit-card .unit-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #4a4a4a;
+}
+
+.start-btn {
+    background: #60a5fa;
+    opacity: 0.8;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.start-btn.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* [Rest of the previous CSS styles remain the same] */
+
+#unitNumber {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #4a4a4a;
+    border-radius: 8px;
+    background: #363636;
+    color: #ffffff;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+}
+
+#unitNumber:focus {
+    outline: none;
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 2px rgba(96,165,250,0.3);
+}
+
+/* Question Container */
+.question-container {
+    background: #363636;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.question {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.unit-info {
+    color: #60a5fa;
+    margin-bottom: 15px;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+/* Options Styles */
+.options-container {
+    display: grid;
+    gap: 15px;
+}
+
+.option {
+    background: #424242;
+    padding: 15px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: right;
+    font-size: 1.1em;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.option:hover {
+    background: #505050;
+    transform: translateX(-5px);
+}
+
+.option.correct {
+    background: #059669;
+    color: #ffffff;
+    border-color: #047857;
+}
+
+.option.wrong {
+    background: #dc2626;
+    color: #ffffff;
+    border-color: #b91c1c;
+}
+
+/* Button Styles */
+.btn {
+    background: #60a5fa;
+    color: #ffffff;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover {
+    background: #3b82f6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59,130,246,0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Results Section */
+.mistakes-list {
+    margin-top: 20px;
+}
+
+.mistake-item {
+    background: #363636;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    border-right: 4px solid #60a5fa;
+}
+
+.mistake-item:hover {
+    transform: translateX(-5px);
+    background: #404040;
+}
+
+.mistake-item .question-text {
+    color: #60a5fa;
+    margin-bottom: 12px;
+    font-size: 1.1em;
+}
+
+.mistake-item .correct-answer {
+    color: #059669;
+    margin-bottom: 8px;
+    padding: 8px;
+    background: rgba(5,150,105,0.1);
+    border-radius: 6px;
+}
+
+.mistake-item .wrong-answer {
+    color: #dc2626;
+    padding: 8px;
+    background: rgba(220,38,38,0.1);
+    border-radius: 6px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .stats {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .question {
+        font-size: 1.2em;
+    }
+
+    .option {
+        padding: 12px 16px;
+        font-size: 1em;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.question-container,
+.mistake-item,
+.stats {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Focus Styles for Accessibility */
+.btn:focus,
+.option:focus,
+#unitNumber:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(96,165,250,0.5);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #2d2d2d;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4a4a4a;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #5a5a5a;
+}

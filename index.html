@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أسئلة اختيار من متعدد - أحياء 2-1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>أسئلة اختيار من متعدد - أحياء 2-1</h1>
+            <p style="color: #60a5fa; margin-top: 10px;">صُنع بجبروت من قبل قياصرة الفلاح</p>
+        </div>
+
+        <div id="unitSelection">
+            <h2 id="اختر-الوحدات-المطلوبة" style="margin-bottom: 20px;">اختر الوحدات المطلوبة</h2>
+
+            <div id="unitsGrid" class="units-grid">
+            </div>
+
+            <div style="margin: 20px 0;">
+                <label for="questionCount" style="display: block; margin-bottom: 10px; color: #60a5fa;">عدد الأسئلة المطلوبة:</label>
+                <input type="number" id="questionCount" min="1" max="50" value="10" style="width: 100%; padding: 12px; border: 2px solid #4a4a4a; border-radius: 8px; background: #363636; color: #ffffff; font-size: 1.1em;">
+            </div>
+
+            <button onclick="startQuiz()" class="btn start-btn">ابدأ الاختبار</button>
+        </div>
+
+        <div id="quizContent" style="display: none;">
+            <div class="stats">
+                <div>
+                    الدرجة: <span id="score">0</span> من <span id="totalScore">0</span>
+                </div>
+                <div>
+                    السؤال: <span id="questionNumber">1</span> من <span id="totalQuestions">0</span>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <div id="unitInfo" class="unit-info"></div>
+                <div id="question" class="question"></div>
+                <div id="options" class="options-container"></div>
+            </div>
+        </div>
+
+        <div id="results" style="display: none;">
+            <h2 id="نتيجة-الاختبار" style="margin-bottom: 20px;">نتيجة الاختبار</h2>
+
+            <div class="stats">
+                <div>
+                    الدرجة النهائية: <span id="finalScore">0</span>
+                </div>
+                <div>
+                    عدد الأخطاء: <span id="mistakesCount">0</span>
+                </div>
+            </div>
+
+            <div id="mistakesList" class="mistakes-list"></div>
+
+            <button onclick="resetQuiz()" class="btn">اختبار جديد</button>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="quiz.js"></script>
+</body>
+</html>
